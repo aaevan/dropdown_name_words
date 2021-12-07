@@ -37,7 +37,6 @@ def gen_combo_arr(
     combo_arr = []
     for first in firsts:
         for second in seconds:
-            #print(f'first:{first.strip()}, last:{second.strip()}')
             combined = f'{first.lower().strip()}{second.lower().strip()}'
             combo_arr.append(combined)
     print(f'combo_arr:\n{combo_arr}')
@@ -65,8 +64,7 @@ def main():
     inverse_word_dict = {value:key for (key, value) in word_dict.items()}
     # generate every pair of first and last name-dropdown options:
     combo_arr = gen_combo_arr()
-    # generates  a dictionary (like word_dict) for just the valid pairs of 
-    # first names and last names
+    # generates a dictionary for just the valid pairs of first names and last names
     phonetic_dict = gen_phonetic_dict(combo_arr)
     output_pairs = []
     for key in phonetic_dict:
